@@ -2,8 +2,10 @@ package com.alecdream.demo.controller;
 
 import java.util.Map;
 import com.alecdream.demo.domain.Message;
+import com.alecdream.demo.domain.User;
 import com.alecdream.demo.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +30,10 @@ public class MainController {
     }
 
     @PostMapping("/main")
-    public String add(@RequestParam String text, @RequestParam String tag, Map<String, Object> model) {
+    public String add(
+            @AuthenticationPrincipal User user,
+            @RequestParam String text,
+            @RequestParam String tag, Map<String, Object> model) {
         Message message = new Message(text, tag);
 
         messageRepo.save(message);
