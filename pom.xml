@@ -33,13 +33,9 @@
 		<groupId>com.h2database</groupId>
 		<artifactId>h2</artifactId>
 	</dependency>
-
-
-		<!-- https://mvnrepository.com/artifact/com.enonic.lib/lib-mustache -->
 		<dependency>
-			<groupId>com.enonic.lib</groupId>
-			<artifactId>lib-mustache</artifactId>
-			<version>2.1.1</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
